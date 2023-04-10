@@ -60,12 +60,12 @@ def grab_from_url(url):
         time = text_between(html, 'dateCreated', '/')[0][22:-7].replace(':', ' ').replace('.', ' ').replace('T', ' ').replace('-', ' ')
         
 
-        # check if directory 'questions' exists, if not, create one
-        if not os.path.exists('questions'):
-            os.mkdir('questions')
+        # check if directory 'zhihu' exists, if not, create one
+        if not os.path.exists('zhihu'):
+            os.mkdir('zhihu')
 
-        # write to a file in to the 'questions' directory
-        filename = 'questions/' + url.split('/')[-1] + ' ' + time + '.txt'
+        # write to a file in to the 'zhihu' directory
+        filename = 'zhihu/' + url.split('/')[-1] + ' ' + time + '.txt'
         with open(filename, 'w', encoding='utf-8') as file:
             print('New File')
             for i in range(0, len(output)):
